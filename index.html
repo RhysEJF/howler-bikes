@@ -18,14 +18,14 @@
     <!-- End MailerLite Universal -->
     <!-- PostHog Analytics -->
     <script>
-    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init Ce js Ls Te Fs Ds capture Ye calculateEventProperties zs register register_once register_for_session unregister unregister_for_session Ws getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Bs Us createPersonProfile Hs Ms Gs opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Ns debug L qs getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    posthog.init('phc_1FDorUCpNUg29XiDukfQJfhcRwwRcmfx4G1tbv1Xnr5', {
-        api_host: 'https://eu.i.posthog.com',
-        defaults: '2025-05-24',
-        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
-    })
-   </script>
- <!-- END PostHog Analytics -->
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init Ce js Ls Te Fs Ds capture Ye calculateEventProperties zs register register_once register_for_session unregister unregister_for_session Ws getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Bs Us createPersonProfile Hs Ms Gs opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Ns debug L qs getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_1FDorUCpNUg29XiDukfQJfhcRwwRcmfx4G1tbv1Xnr5', {
+            api_host: 'https://eu.i.posthog.com',
+            defaults: '2025-05-24',
+            person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+        })
+       </script>
+    <!-- END PostHog Analytics -->
 </head>
 <body>
     <!-- Navigation -->
@@ -33,6 +33,9 @@
         <div class="nav-container">
             <div class="logo">
                 <img src="logo.png" alt="Howler Logo" class="logo-img">
+            </div>
+            <div class="header-badge">
+                <img src="header-logo.png" alt="Header Badge" class="header-badge-img">
             </div>
         </div>
     </nav>
@@ -69,8 +72,43 @@
 
             <!-- Hero Image/Visual -->
             <div class="hero-visual">
-                <div class="bike-placeholder">
-                    <img src="bike-image.jpg" alt="Howler Titanium Bike" class="bike-image">
+                <div class="bike-slideshow">
+                    <div class="bike-placeholder">
+                        <img src="bike-image.jpg" alt="Howler Titanium Bike" class="bike-image active" data-slide="0">
+                        <img src="bike-1.jpg" alt="Howler Titanium Bike" class="bike-image" data-slide="1">
+                        <img src="bike-2.jpg" alt="Howler Titanium Bike" class="bike-image" data-slide="2">
+                        <img src="bike-3.jpg" alt="Howler Titanium Bike" class="bike-image" data-slide="3">
+                        <img src="bike-4.jpg" alt="Howler Titanium Bike" class="bike-image" data-slide="4">
+                        <img src="bike-5.jpg" alt="Howler Titanium Bike" class="bike-image" data-slide="5">
+                        <img src="bike-6.jpg" alt="Howler Titanium Bike" class="bike-image" data-slide="6">
+                        <img src="bike-7.jpg" alt="Howler Titanium Bike" class="bike-image" data-slide="7">
+                        <img src="bike-8.jpg" alt="Howler Titanium Bike" class="bike-image" data-slide="8">
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button class="slideshow-nav prev" id="prevBtn" aria-label="Previous image">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15,18 9,12 15,6"></polyline>
+                        </svg>
+                    </button>
+                    <button class="slideshow-nav next" id="nextBtn" aria-label="Next image">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6"></polyline>
+                        </svg>
+                    </button>
+                    
+                    <!-- Slide Indicators -->
+                    <div class="slide-indicators">
+                        <button class="indicator active" data-slide="0"></button>
+                        <button class="indicator" data-slide="1"></button>
+                        <button class="indicator" data-slide="2"></button>
+                        <button class="indicator" data-slide="3"></button>
+                        <button class="indicator" data-slide="4"></button>
+                        <button class="indicator" data-slide="5"></button>
+                        <button class="indicator" data-slide="6"></button>
+                        <button class="indicator" data-slide="7"></button>
+                        <button class="indicator" data-slide="8"></button>
+                    </div>
                 </div>
             </div>
         </div>
