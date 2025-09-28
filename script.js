@@ -168,4 +168,114 @@ document.addEventListener('DOMContentLoaded', function() {
         successMessage.style.display = 'block';
         successMessage.querySelector('p').textContent = `🎉 Welcome back! You're already on our waiting list with ${existingEmail}`;
     }
+
+    // Bike Slideshow functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.bike-image');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const totalSlides = slides.length;
+
+    console.log('Slideshow initialized:', {
+        totalSlides,
+        slidesFound: slides.length,
+        indicatorsFound: indicators.length,
+        prevBtn: !!prevBtn,
+        nextBtn: !!nextBtn
+    });
+
+    function showSlide(slideIndex) {
+        // Hide all slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        // Show current slide
+        slides[slideIndex].classList.add('active');
+        indicators[slideIndex].classList.add('active');
+        
+        currentSlide = slideIndex;
+    }
+
+    function nextSlide() {
+        const nextIndex = (currentSlide + 1) % totalSlides;
+        showSlide(nextIndex);
+    }
+
+    function prevSlide() {
+        const prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(prevIndex);
+    }
+
+    // Navigation event listeners (with safety checks)
+    if (nextBtn && prevBtn && slides.length > 0) {
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Next button clicked');
+            nextSlide();
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Previous button clicked');
+            prevSlide();
+        });
+
+        // Indicator event listeners
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Indicator clicked:', index);
+                showSlide(index);
+            });
+        });
+    } else {
+        console.error('Slideshow elements not found:', {
+            nextBtn: !!nextBtn,
+            prevBtn: !!prevBtn,
+            slides: slides.length
+        });
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+        }
+    });
+
+    // Auto-play slideshow (optional - uncomment to enable)
+    // setInterval(nextSlide, 5000); // Auto advance every 5 seconds
+
+    // Touch/swipe support for mobile
+    let startX = 0;
+    let endX = 0;
+
+    const slideContainer = document.querySelector('.bike-placeholder');
+    
+    slideContainer.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    slideContainer.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = startX - endX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swipe left - next slide
+                nextSlide();
+            } else {
+                // Swipe right - previous slide
+                prevSlide();
+            }
+        }
+    }
 });
