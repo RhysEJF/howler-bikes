@@ -85,10 +85,11 @@ body {
 .hero-title {
     font-family: 'Oxanium', sans-serif;
     font-size: 4.5rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.1;
     margin-bottom: 1.5rem;
     color: #ffffff;
+    text-transform: uppercase;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 1px 1px 4px rgba(0, 0, 0, 0.9);
 }
 
